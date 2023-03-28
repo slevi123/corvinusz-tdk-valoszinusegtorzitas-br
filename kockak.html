@@ -13,22 +13,28 @@
 
 <body>
     <header>
-
+        <h1>Kérdőív Valószínűségtorzításhoz</h1>
     </header>
 
-    <section>
-        <article>
-            <h1>Liar`s Dice</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, laborum quasi modi magnam dicta quo
-                aliquam sequi odio explicabo, necessitatibus quae excepturi iste eos amet beatae quibusdam aperiam
-                sapiente ullam.</p>
+    <article>
+        <section>
+            <div id="elso-form"></div>
+        </section>
 
-        </article> 
-
-        <article id="kockak">
-            <div class="kocka">
-                <div class="face-1" style="display: none;">
-                    <span class="dot"> </span>
+        <section class="game">
+            <h2>Liar`s Dice</h2>
+            <p>Ön egy kockajátékot játszik, aminek lényege, hogy két kockával gurítunk és mindig a nagyobb számot kell
+                elsőnek mondani a kisebbet pedig hátra. Így például egy 3-as és egy 5-ös gurításnál a bemondandó szám
+                53. A dupla gurítás például 2-2 a vegyessel szemben többet ér így a 22 jobb, mint az 53. Az összes közül
+                a legnagyobb gurításnak a 21 számít. A játékot az óra mutatóval ellentétes irányba játszák körbe, és
+                minden játékos gurít. Minden játékos az előző társánál nagyobb értékű gurítást kell, bemondjon, vagy
+                hazugnak kell, jelentse az előző játékost, aki fel kell, fedje kockáit. Ha valakiről kiderül, hogy
+                hazudott, vagy tévesen kiáltott valakit ki hazugnak akkor kap 1 pontot. Az a játékos nyer, aki a
+                legkevesebb ponttal fejezi be a játékot.</p>
+            <div id="kockak">
+                <div class="kocka">
+                    <div class="face-1" style="display: none;">
+                        <span class="dot"> </span>
                 </div>
                 <div class="face-2" style="display: none;">
                     <span class="dot"> </span>
@@ -75,70 +81,93 @@
                         <span class="dot"> </span>
                     </div>
                 </div>
+                </div>
+                <div class="kocka">
+                    <div class="face-1" style="display: none;">
+                        <span class="dot"> </span>
+                    </div>
+                    <div class="face-2" style="display: none;">
+                        <span class="dot"> </span>
+                        <span class="dot"> </span>
+                    </div>
+                    <div class="face-3" style="display: none;">
+                        <span class="dot"> </span>
+                        <span class="dot"> </span>
+                        <span class="dot"> </span>
+                    </div>
+                    <div class="face-4" style="display: none;">
+                        <div class="column">
+                            <span class="dot"> </span>
+                            <span class="dot"> </span>
+                        </div>
+                        <div class="column">
+                            <span class="dot"> </span>
+                            <span class="dot"> </span>
+                        </div>
+                    </div>
+                    <div class="face-5">
+                        <div class="column">
+                            <span class="dot"> </span>
+                            <span class="dot"> </span>
+                        </div>
+                        <div class="column">
+                            <span class="dot"> </span>
+                        </div>
+                        <div class="column">
+                            <span class="dot"> </span>
+                            <span class="dot"> </span>
+                        </div>
+                    </div>
+                    <span class="do"> </span>
+                    <div class="face-6" style="display: none;">
+                        <div class="column">
+                            <span class="dot"> </span>
+                            <span class="dot"> </span>
+                            <span class="dot"> </span>
+                        </div>
+                        <div class="column">
+                            <span class="dot"> </span>
+                            <span class="dot"> </span>
+                            <span class="dot"> </span>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <p>Nyertél!</p>
+            <div id="buttons">
+                <button onclick="regenerate()">Hazug!</button>
+                <button onclick="roll()">Gurítok</button>
+            </div>
+        </section>
 
-            <div class="kocka">
-                <div class="face-1" style="display: none;">
-                    <span class="dot"> </span>
-                </div>
-                <div class="face-2" style="display: none;">
-                    <span class="dot"> </span>
-                    <span class="dot"> </span>
-                </div>
-                <div class="face-3" style="display: none;">
-                    <span class="dot"> </span>
-                    <span class="dot"> </span>
-                    <span class="dot"> </span>
-                </div>
-                <div class="face-4" style="display: none;">
-                    <div class="column">
-                        <span class="dot"> </span>
-                        <span class="dot"> </span>
-                    </div>
-                    <div class="column">
-                        <span class="dot"> </span>
-                        <span class="dot"> </span>
-                    </div>
-                </div>
-                <div class="face-5">
-                    <div class="column">
-                        <span class="dot"> </span>
-                        <span class="dot"> </span>
-                    </div>
-                    <div class="column">
-                        <span class="dot"> </span>
-                    </div>
-                    <div class="column">
-                        <span class="dot"> </span>
-                        <span class="dot"> </span>
-                    </div>
-                </div>
-                <span class="do"> </span>
-                <div class="face-6" style="display: none;">
-                    <div class="column">
-                        <span class="dot"> </span>
-                        <span class="dot"> </span>
-                        <span class="dot"> </span>
-                    </div>
-                    <div class="column">
-                        <span class="dot"> </span>
-                        <span class="dot"> </span>
-                        <span class="dot"> </span>
-                    </div>
-                </div>
-            </div>
-        </article>
-        <article id="buttons">
-            <button onclick="regenerate()">Hazug!</button>
-            <button onclick="roll()">Gurítok</button>
-        </article>
-    </section>
+        <section class="game">
+            <h2>Black Jack</h2>
+            <p>Ön a következő játékot játssza: Black Jack, (21). A játék szabályai a következők: Ha a játékos lapjainak
+                összértéke közelebb van a 21-hez, mint az osztóé, akkor a játékos a tétet 2:1 arányban kapja meg. Ha az
+                osztó lapjainak összértéke közelebb van a 21-hez, mint a játékosé, akkor a játékos elvesztette a tétet.
+                Ha a játékos és az osztó lapjainak összértéke egyforma, akkor az állás döntetlen (Push), a megtett tétet
+                visszakapja a játékos. Ha a játékos lapjainak összértéke a játék során a 21-et meghaladja (Bust), akkor
+                a játékos elvesztette a tétet, az osztó későbbi eredményétől függetlenül. Ha az osztó lapjainak
+                összértéke a játék során a 21-et meghaladja (Bust), akkor a játékos a tétet 2:1arányban kapja meg. Ha a
+                játékos az első két lapjának összértéke pontosan 21 (Blackjack), és az osztó nem Blackjack-et ért el,
+                akkor a játékos a megtett tétet 3:2 arányban kapja meg.</p>
+        </section>
+
+        <section>
+            <div id="masodik-form"></div>
+        </section>
+    </article>
 
     <footer>
         <p>© 2023 Bellu Robert, Simofi Levente</p>
     </footer>
 
-    <script src="js/kocka.js"></script>
+    <!-- <script async defer -->
+        <!-- src="https://formfacade.com/include/108239625964653467006/form/1FAIpQLSfmUB0IkB8DW2JzOgFUekns7xo-zhB8XywsnA6tV0Yq74Ka2w/classic.js?div=elso-form"></script> -->
+    
+        <script async defer src="https://formfacade.com/include/108239625964653467006/form/1FAIpQLSexDcamZCfIinCeUJODMh6pqTnngB5tKQUm1bYeiLz-3zfOWw/classic.js?div=elso-form"></script>
+        <script async defer src="https://formfacade.com/include/108239625964653467006/form/1FAIpQLSeAgQu_zD6sN62e8QT_4shqwdANDmV-g0e8r6KjInmwJzv8cQ/classic.js?div=masodik-form"></script>
+        <script src="js/kocka.js"></script>
 </body>
 
 </html>

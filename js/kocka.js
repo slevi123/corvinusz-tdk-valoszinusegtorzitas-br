@@ -13,3 +13,10 @@ function roll() {
         });
     });
 }
+
+console.log("heo");
+submit_texts = document.querySelectorAll("img.ff-submit-icon~span")
+submit_texts.forEach(function (submit_text) {
+    submit_text.textContent = "rész elküldése";
+    console.log("vau");
+});
