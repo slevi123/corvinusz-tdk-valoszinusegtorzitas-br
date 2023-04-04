@@ -11,29 +11,104 @@ h1 {
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     font-size: 3em;
+
+    @media screen and (max-width: 600px) {
+        font-size: 2em;
+    }
+}
+
+
+section {
+    margin: 0;
+    padding: 20px;
+    max-width: 756px;
+    width: 100%;
+    min-width: fit-content;
+
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    @media screen and (max-width: 600px) {
+        padding: 3px;
+    }
+    
+    >iframe {
+        overflow: hidden;
+        border: none;
+        min-width: 100%;
+        min-height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    &.game {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        
+        border-radius: 25px;
+        background: rgba(250, 235, 215, 0.726);
+        border: 5px solid rgba(159, 146, 128, 0.789);
+        // background: rgba(250, 235, 215, 0.726);
+        
+        font-size: 1em;
+
+        .game-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+
+            button {
+                border-radius: 25px;
+                padding: 13px 20px;
+                background: rgb(250, 228, 196);
+                font-weight: bold;
+            }
+        }
+
+    }
 }
 
 // kocka oldalak
 .kocka {
     display: inline-block;
-    padding: 8px;  
-    background-color: rgb(254, 254, 254);  
-    width: $dice-size; 
+    padding: 8px;
+    background-color: rgb(254, 254, 254);
+    width: $dice-size;
     height: $dice-size;
-    border: 5px solid rgb(0, 0, 0); 
+    border: 5px solid rgb(0, 0, 0);
     border-radius: 10%;
+
+    position: relative;
 
     .dot {
         display: block;
         width: 24px;
         height: 24px;
         border-radius: 50%;
-        background-color:rgb(0, 0, 0);
+        background-color: rgb(0, 0, 0);
     }
 
-    >.face-1, >.face-2, >.face-3, >.face-4, >.face-5, >.face-6 {
+    >.face-1,
+    >.face-2,
+    >.face-3,
+    >.face-4,
+    >.face-5,
+    >.face-6 {
         display: flex;
         height: $dice-size;
+        padding: auto;
+
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s linear;
+
+        position: absolute;
+        left: 0;
+        right: 0;
     }
 
     /* ---------------first face------------------ */
@@ -42,9 +117,9 @@ h1 {
         align-items: center;
     }
 
-      /* ---------------second face------------------ */
-      >.face-2 {
-        justify-content : space-between;
+    /* ---------------second face------------------ */
+    >.face-2 {
+        justify-content: space-around;
 
         .dot:nth-of-type(2) {
             align-self: flex-end;
@@ -53,54 +128,37 @@ h1 {
 
     /* ---------------third face------------------ */
     >.face-3 {
-        justify-content: space-between;
+        justify-content: space-around;
 
         align-items: center;
 
         .dot:nth-of-type(1) {
             align-self: flex-start;
         }
+
         .dot:nth-last-of-type(1) {
             align-self: flex-end;
         }
     }
-    
+
     /* ---------------other faces------------------ */
-    >.face-4, >.face-5, >.face-6 {
-        justify-content: space-between;
-        
+    >.face-4,
+    >.face-5,
+    >.face-6 {
+        justify-content: space-around;
+
         >.column {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-around;
         }
     }
 
-    >.face-5{
+    >.face-5 {
         >.column:nth-of-type(2) {
             justify-content: center;
         }
     }
-}
-
-section {
-    margin: 30px;
-    padding: 20px;
-}
-
-section.game {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    
-    border: 5px solid rgba(159, 146, 128, 0.789);
-    border-radius: 25px;
-    background-color: rgba(250, 235, 215, 0.726);
-
-    width:750px;
-    margin:auto;
-    margin-top: 5%;
 }
 
 #kockak {
@@ -110,7 +168,13 @@ section.game {
     margin: 20px;
 }
 
-#buttons{
+#buttons {
     display: flex;
     gap: 20px;
+}
+
+p#dice-answer {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
 }
